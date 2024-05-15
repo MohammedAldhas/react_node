@@ -49,7 +49,7 @@ app.get("/lists/:id", async (req, res) => {
 //Delete //...//
 app.delete("/lists/delete/:id", async (req, res) => {
   const id = req.params.id;
-  await Lists.findOneAndDelete({ _id: id })
+  await Lists.findOneAndDelete(id)
     .then((result) => res.json(result))
     .catch((err) => res.json(err));
 });
